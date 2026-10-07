@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Душевный вольтец — полный анализ</title>
+<style>
+:root{--bg:#080a0f;--panel:#10141d;--panel2:#151a24;--text:#f3f5f8;--muted:#8992a4;--line:#242b38;--accent:#7c8cff;--accent2:#40d9b2;--danger:#ff667c;--warn:#ffbf5c}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 15% 0%,#18203b 0,#080a0f 35%),#080a0f;color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif} 
+.shell{max-width:1280px;margin:auto;padding:24px} header{padding:26px 0 18px} h1{font-size:clamp(30px,5vw,54px);margin:0 0 8px;letter-spacing:-.04em} h2{font-size:28px;margin:0 0 8px} h3{margin:0 0 8px} .sub{color:var(--muted);max-width:760px}
+.tabs{position:sticky;top:0;z-index:20;background:rgba(8,10,15,.92);backdrop-filter:blur(16px);display:flex;gap:7px;overflow:auto;padding:10px 0;border-bottom:1px solid var(--line)}
+.tabs a{color:#aeb6c6;text-decoration:none;padding:9px 13px;border:1px solid var(--line);border-radius:12px;white-space:nowrap;background:#0d1118} .tabs a:hover{color:white;border-color:#46506a}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px} .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} .panel{background:linear-gradient(145deg,var(--panel),#0c1017);border:1px solid var(--line);border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 12px 40px #0003} .kpi b{display:block;font-size:28px;margin-top:4px} small,.muted{color:var(--muted)} .accent{color:var(--accent2)} .danger{color:var(--danger)} 
+section{scroll-margin-top:70px;margin:28px 0 44px} .barrow{margin:12px 0} .barlabel{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px} .track{height:8px;background:#202633;border-radius:99px;overflow:hidden} .track i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px}
+table{width:100%;border-collapse:collapse} th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left} th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em} .pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#1b2230;color:#cdd5e4;font-size:12px}
+.profile-card{background:#0f141c;border:1px solid var(--line);border-radius:16px;margin:9px 0;overflow:hidden} summary{cursor:pointer;list-style:none;padding:15px;display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center} summary::-webkit-details-marker{display:none} .rank{color:var(--muted);font-variant-numeric:tabular-nums} .pname{font-weight:700} .count{color:var(--accent2);font-variant-numeric:tabular-nums} .profile-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 15px 15px} .profile-grid div{background:#151b25;border-radius:12px;padding:10px} .profile-grid strong{display:block;margin-top:3px} .bio{margin:0;padding:0 15px 17px;color:#b8c0cf}
+.pair{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)} .pair strong{white-space:nowrap}
+.nodewrap{display:grid;grid-template-columns:1.4fr .9fr;gap:14px} .network{position:relative;min-height:440px;background:#0c1119;border:1px solid var(--line);border-radius:18px;overflow:hidden} .node{position:absolute;transform:translate(-50%,-50%);background:#151c28;border:1px solid #4a5570;border-radius:999px;padding:8px 12px;font-size:12px;box-shadow:0 8px 25px #0008} .node b{display:block} .legend{color:var(--muted);font-size:12px}
+.callout{border-left:3px solid var(--accent2);padding:12px 15px;background:#101820;border-radius:0 12px 12px 0;margin:12px 0} footer{color:var(--muted);padding:30px 0 60px;font-size:12px}
+@media(max-width:850px){.grid,.grid3{grid-template-columns:1fr 1fr} .nodewrap{grid-template-columns:1fr} .profile-grid{grid-template-columns:1fr 1fr} .shell{padding:14px}}
+@media(max-width:560px){.grid,.grid3,.profile-grid{grid-template-columns:1fr} h1{font-size:34px} .tabs a{padding:8px 10px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+<div class="pill">TELEGRAM · 14 УЧАСТНИКОВ</div>
+<h1>Душевный вольтец</h1>
+<div class="sub">Полный статистический разбор группового чата: активность, связи, реакции, конфликты, подколы, контент и индивидуальные профайлы.</div>
+</header>
+<nav class="tabs"><a href="#overview">Обзор</a><a href="#network">Связи</a><a href="#people">Участники</a><a href="#profiles">Профайлы</a><a href="#conflicts">Споры и подколы</a><a href="#reactions">Реакции</a><a href="#activity">Активность</a><a href="#media">Контент</a><a href="#highlights">Выводы</a></nav>
+
+<section id="overview">
+<h2>Обзор</h2><div class="grid">
+<div class="panel kpi"><small>Сообщений участников</small><b>308,987</b></div>
+<div class="panel kpi"><small>Участников</small><b>14</b></div>
+<div class="panel kpi"><small>Реакций</small><b>93,538</b></div>
+<div class="panel kpi"><small>Прямых ответов</small><b>51,605</b></div>
+</div>
+<div class="grid3">
+<div class="panel"><small>Самый активный</small><h3>Никита Молчанов</h3><b>42,776 сообщений</b></div>
+<div class="panel"><small>Больше всего реакций</small><h3>Марик</h3><b>13,958</b></div>
+<div class="panel"><small>Самая плотная пара</small><h3>Никита ↔ Владимир</h3><b>2 293 ответа</b></div>
+</div>
+</section>
+
+<section id="network"><h2>Связи</h2><p class="sub">Связь считается по прямым ответам на сообщения. Это не рейтинг симпатий: высокая связь означает высокий объём взаимодействия.</p>
+<div class="panel"><h3>20 самых плотных пар</h3>
+<div class="pair"><span>Никита Молчанов ↔ Владимир Царев</span><strong>2,293</strong></div><div class="pair"><span>Никита Молчанов ↔ Даймонд</span><strong>2,241</strong></div><div class="pair"><span>Никита Молчанов ↔ Гриша Чуменко</span><strong>1,979</strong></div><div class="pair"><span>Никита Молчанов ↔ Вахид</span><strong>1,632</strong></div><div class="pair"><span>Вахид ↔ Даймонд</span><strong>1,483</strong></div><div class="pair"><span>Даймонд ↔ Гриша Чуменко</span><strong>1,463</strong></div><div class="pair"><span>Владимир Царев ↔ Гриша Чуменко</span><strong>1,396</strong></div><div class="pair"><span>Никита Молчанов ↔ Роман Антропов</span><strong>1,333</strong></div><div class="pair"><span>Никита Молчанов ↔ Марик</span><strong>1,303</strong></div><div class="pair"><span>Даймонд ↔ Марик</span><strong>1,283</strong></div><div class="pair"><span>Даймонд ↔ Владимир Царев</span><strong>1,267</strong></div><div class="pair"><span>Никита Молчанов ↔ Ярослейв</span><strong>1,204</strong></div><div class="pair"><span>Владимир Царев ↔ Ярослейв</span><strong>1,162</strong></div><div class="pair"><span>Никита Молчанов ↔ Смбат Гарибян</span><strong>1,117</strong></div><div class="pair"><span>Вахид ↔ Гриша Чуменко</span><strong>1,109</strong></div><div class="pair"><span>Вахид ↔ Владимир Царев</span><strong>1,101</strong></div><div class="pair"><span>Вахид ↔ Марик</span><strong>1,024</strong></div><div class="pair"><span>Даймонд ↔ Роман Антропов</span><strong>969</strong></div><div class="pair"><span>Даймонд ↔ Илья Ланин</span><strong>932</strong></div><div class="pair"><span>Гриша Чуменко ↔ Илья Ланин</span><strong>895</strong></div>
+</div></section>
+
+<section id="people"><h2>Участники</h2><p class="sub">Рейтинг по количеству сообщений.</p>
+<div class="panel"><div class="barrow"><div class="barlabel"><span>Никита Молчанов</span><b>42 776</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Вахид</span><b>38 733</b></div><div class="track"><i style="width:90.5%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даймонд</span><b>34 622</b></div><div class="track"><i style="width:80.9%"></i></div></div><div class="barrow"><div class="barlabel"><span>Владимир Царев</span><b>30 834</b></div><div class="track"><i style="width:72.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>Марик</span><b>28 086</b></div><div class="track"><i style="width:65.7%"></i></div></div><div class="barrow"><div class="barlabel"><span>Смбат Гарибян</span><b>26 345</b></div><div class="track"><i style="width:61.6%"></i></div></div><div class="barrow"><div class="barlabel"><span>Ярослейв</span><b>24 845</b></div><div class="track"><i style="width:58.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>Гриша Чуменко</span><b>23 703</b></div><div class="track"><i style="width:55.4%"></i></div></div><div class="barrow"><div class="barlabel"><span>Роман Антропов</span><b>21 268</b></div><div class="track"><i style="width:49.7%"></i></div></div><div class="barrow"><div class="barlabel"><span>Илья Ланин</span><b>14 956</b></div><div class="track"><i style="width:35.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Александр Шишкин</span><b>9 413</b></div><div class="track"><i style="width:22.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Егор Гришин</span><b>9 058</b></div><div class="track"><i style="width:21.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>Чума</span><b>2 667</b></div><div class="track"><i style="width:6.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даниил</span><b>1 681</b></div><div class="track"><i style="width:3.9%"></i></div></div></div>
+</section>
+
+<section id="profiles"><h2>Профайлы</h2><p class="sub">Общая характеристика каждого участника на основе объёма сообщений, сети ответов, реакций и текстовых поведенческих маркеров. Это описание поведения в чате, а не психологический диагноз.</p>
+<div class="panel">
+    <details class="profile-card">
+      <summary><span class="rank">01</span><span class="pname">Никита Молчанов</span><span class="count">42,776</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>13.84%</strong></div>
+        <div><small>Реакции</small><strong>10,615</strong></div>
+        <div><small>Ответил</small><strong>7,380</strong></div>
+        <div><small>Получил ответов</small><strong>8,042</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>355</strong></div>
+        <div><small>Средняя длина</small><strong>23.4 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Чт</strong></div>
+      </div>
+      <p class="bio">Один из главных коммуникационных центров группы. Очень высокая активность и широкий охват связей. Часто оказывается в центре шуток и конфликтных обменов, но сам активно поддерживает эту динамику.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">02</span><span class="pname">Вахид</span><span class="count">38,733</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>12.54%</strong></div>
+        <div><small>Реакции</small><strong>5,507</strong></div>
+        <div><small>Ответил</small><strong>4,027</strong></div>
+        <div><small>Получил ответов</small><strong>6,035</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>806</strong></div>
+        <div><small>Средняя длина</small><strong>18.4 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Пт</strong></div>
+      </div>
+      <p class="bio">Связующий участник с очень широкой сетью контактов. Высокая активность, много двусторонних обменов с ядром группы. Часто участвует и в серьёзных обсуждениях, и в коллективном стёбе.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">03</span><span class="pname">Даймонд</span><span class="count">34,622</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>11.21%</strong></div>
+        <div><small>Реакции</small><strong>5,548</strong></div>
+        <div><small>Ответил</small><strong>6,547</strong></div>
+        <div><small>Получил ответов</small><strong>5,806</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>805</strong></div>
+        <div><small>Средняя длина</small><strong>34.2 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Ср</strong></div>
+      </div>
+      <p class="bio">Один из самых интенсивных участников взаимодействий. Высокая вовлечённость в споры и подколы, особенно с центральными участниками. Его стиль заметно влияет на эмоциональную динамику чата.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">04</span><span class="pname">Владимир Царев</span><span class="count">30,834</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>9.98%</strong></div>
+        <div><small>Реакции</small><strong>9,393</strong></div>
+        <div><small>Ответил</small><strong>5,444</strong></div>
+        <div><small>Получил ответов</small><strong>5,258</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>702</strong></div>
+        <div><small>Средняя длина</small><strong>24.5 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Пн</strong></div>
+      </div>
+      <p class="bio">Сильный структурный участник с большим количеством ответов и связей. Часто вступает в дискуссии, при этом сам активно инициирует и поддерживает конфликтно-иронические обмены.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">05</span><span class="pname">Марик</span><span class="count">28,086</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>9.09%</strong></div>
+        <div><small>Реакции</small><strong>13,958</strong></div>
+        <div><small>Ответил</small><strong>4,114</strong></div>
+        <div><small>Получил ответов</small><strong>3,844</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>766</strong></div>
+        <div><small>Средняя длина</small><strong>21.9 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Вт</strong></div>
+      </div>
+      <p class="bio">Очень активный участник с исключительно высоким количеством полученных реакций. Сильнее многих влияет на атмосферу и часто оказывается внутри живых цепочек общения.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">06</span><span class="pname">Смбат Гарибян</span><span class="count">26,345</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>8.53%</strong></div>
+        <div><small>Реакции</small><strong>6,396</strong></div>
+        <div><small>Ответил</small><strong>2,958</strong></div>
+        <div><small>Получил ответов</small><strong>3,257</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>623</strong></div>
+        <div><small>Средняя длина</small><strong>18.6 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Чт</strong></div>
+      </div>
+      <p class="bio">Высокоактивный участник с большим количеством связей. Заметен в длительных обменах с ядром группы и регулярно участвует в шутливых и спорных ветках.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">07</span><span class="pname">Ярослейв</span><span class="count">24,845</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>8.04%</strong></div>
+        <div><small>Реакции</small><strong>9,489</strong></div>
+        <div><small>Ответил</small><strong>4,187</strong></div>
+        <div><small>Получил ответов</small><strong>3,236</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>711</strong></div>
+        <div><small>Средняя длина</small><strong>23.0 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Ср</strong></div>
+      </div>
+      <p class="bio">Очень активный комментатор с широким кругом связей. Часто участвует в спорных обменах, но одновременно поддерживает интеллектуально-ироническую сторону общения.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">08</span><span class="pname">Гриша Чуменко</span><span class="count">23,703</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>7.67%</strong></div>
+        <div><small>Реакции</small><strong>7,315</strong></div>
+        <div><small>Ответил</small><strong>4,884</strong></div>
+        <div><small>Получил ответов</small><strong>5,566</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>682</strong></div>
+        <div><small>Средняя длина</small><strong>27.6 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Чт</strong></div>
+      </div>
+      <p class="bio">Один из центральных участников по количеству прямых ответов. С Никитой, Даймондом и Владимиром образует плотный коммуникационный узел; получает и отправляет много подколов.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">09</span><span class="pname">Роман Антропов</span><span class="count">21,268</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>6.88%</strong></div>
+        <div><small>Реакции</small><strong>6,265</strong></div>
+        <div><small>Ответил</small><strong>3,307</strong></div>
+        <div><small>Получил ответов</small><strong>3,282</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>633</strong></div>
+        <div><small>Средняя длина</small><strong>19.2 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Чт</strong></div>
+      </div>
+      <p class="bio">Стабильно активный участник с особенно заметной связью с Никитой. Чаще поддерживает существующие разговоры и шутливую динамику, чем формирует отдельный конфликтный центр.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">10</span><span class="pname">Илья Ланин</span><span class="count">14,956</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>4.84%</strong></div>
+        <div><small>Реакции</small><strong>7,522</strong></div>
+        <div><small>Ответил</small><strong>4,030</strong></div>
+        <div><small>Получил ответов</small><strong>2,772</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>701</strong></div>
+        <div><small>Средняя длина</small><strong>29.6 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Чт</strong></div>
+      </div>
+      <p class="bio">Менее объёмный по сообщениям, но хорошо встроенный участник. Имеет заметные связи с Гришей, Даймондом и Владимиром; его влияние выше, чем можно предположить только по количеству сообщений.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">11</span><span class="pname">Александр Шишкин</span><span class="count">9,413</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>3.05%</strong></div>
+        <div><small>Реакции</small><strong>4,237</strong></div>
+        <div><small>Ответил</small><strong>1,600</strong></div>
+        <div><small>Получил ответов</small><strong>1,734</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>603</strong></div>
+        <div><small>Средняя длина</small><strong>30.9 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Вт</strong></div>
+      </div>
+      <p class="bio">Полноценно интегрированный участник второго уровня: имеет прямые связи со всеми остальными участниками. Не находится в самом центре по объёму, но регулярно участвует и в обычных, и в конфликтно-иронических обменах.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">12</span><span class="pname">Егор Гришин</span><span class="count">9,058</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>2.93%</strong></div>
+        <div><small>Реакции</small><strong>4,622</strong></div>
+        <div><small>Ответил</small><strong>2,006</strong></div>
+        <div><small>Получил ответов</small><strong>1,813</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>484</strong></div>
+        <div><small>Средняя длина</small><strong>34.5 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Пн</strong></div>
+      </div>
+      <p class="bio">При относительно небольшом объёме сообщений имеет широкую сеть связей. Особенно заметны обмены с Никитой, Даймондом, Александром и Вахидом; активно участвует в подколах.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">13</span><span class="pname">Чума</span><span class="count">2,667</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>0.86%</strong></div>
+        <div><small>Реакции</small><strong>1,309</strong></div>
+        <div><small>Ответил</small><strong>741</strong></div>
+        <div><small>Получил ответов</small><strong>612</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>278</strong></div>
+        <div><small>Средняя длина</small><strong>37.8 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Вт</strong></div>
+      </div>
+      <p class="bio">Низкоактивный по объёму сообщений, но не изолированный участник. Его роль лучше описывается как эпизодическое присутствие в общей коммуникационной сети.</p>
+    </details>
+    <details class="profile-card">
+      <summary><span class="rank">14</span><span class="pname">Даниил</span><span class="count">1,681</span></summary>
+      <div class="profile-grid">
+        <div><small>Доля чата</small><strong>0.54%</strong></div>
+        <div><small>Реакции</small><strong>1,362</strong></div>
+        <div><small>Ответил</small><strong>380</strong></div>
+        <div><small>Получил ответов</small><strong>348</strong></div>
+        <div><small>Собеседников</small><strong>13</strong></div>
+        <div><small>Активных дней</small><strong>213</strong></div>
+        <div><small>Средняя длина</small><strong>29.0 симв.</strong></div>
+        <div><small>Пик по дням</small><strong>Пн</strong></div>
+      </div>
+      <p class="bio">Самый малочисленный по сообщениям участник среди 14 человек, но с несколькими устойчивыми связями с ядром. Низкая активность не равна отсутствию интеграции.</p>
+    </details></div></section>
+
+<section id="conflicts"><h2>Споры и подколы</h2><p class="sub">«Конфликтные маркеры» и «подколы» — текстовые эвристики. Они показывают характер языка, но не доказывают реальную ссору или неприязнь.</p>
+<div class="grid3">
+<div class="panel"><small>Самая конфликтная пара по маркерам</small><h3>Никита ↔ Гриша</h3><b>130</b></div>
+<div class="panel"><small>Самая высокая агрессивная лексика</small><h3>Владимир ↔ Никита</h3><b>68</b></div>
+<div class="panel"><small>Главная мишень подколов</small><h3>Никита Молчанов</h3><b>611</b></div>
+</div>
+<div class="grid3">
+<div class="panel"><h3>Топ споров</h3><div class="pair"><span>Никита Молчанов ↔ Гриша Чуменко</span><strong>130</strong></div><div class="pair"><span>Никита Молчанов ↔ Даймонд</span><strong>124</strong></div><div class="pair"><span>Никита Молчанов ↔ Владимир Царев</span><strong>106</strong></div><div class="pair"><span>Никита Молчанов ↔ Вахид</span><strong>94</strong></div><div class="pair"><span>Даймонд ↔ Гриша Чуменко</span><strong>91</strong></div><div class="pair"><span>Вахид ↔ Даймонд</span><strong>88</strong></div><div class="pair"><span>Никита Молчанов ↔ Ярослейв</span><strong>86</strong></div><div class="pair"><span>Владимир Царев ↔ Гриша Чуменко</span><strong>85</strong></div><div class="pair"><span>Никита Молчанов ↔ Смбат Гарибян</span><strong>76</strong></div><div class="pair"><span>Даймонд ↔ Владимир Царев</span><strong>73</strong></div><div class="pair"><span>Вахид ↔ Гриша Чуменко</span><strong>73</strong></div><div class="pair"><span>Никита Молчанов ↔ Марик</span><strong>68</strong></div></div>
+<div class="panel"><h3>Топ агрессивных маркеров</h3><div class="pair"><span>Никита Молчанов ↔ Владимир Царев</span><strong>68</strong></div><div class="pair"><span>Никита Молчанов ↔ Гриша Чуменко</span><strong>67</strong></div><div class="pair"><span>Владимир Царев ↔ Гриша Чуменко</span><strong>64</strong></div><div class="pair"><span>Никита Молчанов ↔ Даймонд</span><strong>63</strong></div><div class="pair"><span>Никита Молчанов ↔ Вахид</span><strong>56</strong></div><div class="pair"><span>Вахид ↔ Даймонд</span><strong>50</strong></div><div class="pair"><span>Никита Молчанов ↔ Ярослейв</span><strong>49</strong></div><div class="pair"><span>Смбат Гарибян ↔ Гриша Чуменко</span><strong>48</strong></div><div class="pair"><span>Даймонд ↔ Владимир Царев</span><strong>45</strong></div><div class="pair"><span>Владимир Царев ↔ Ярослейв</span><strong>45</strong></div><div class="pair"><span>Даймонд ↔ Марик</span><strong>40</strong></div><div class="pair"><span>Вахид ↔ Владимир Царев</span><strong>40</strong></div></div>
+<div class="panel"><h3>Кто кого подкалывает</h3><div class="pair"><span>Владимир Царев → Никита Молчанов</span><strong>113</strong></div><div class="pair"><span>Даймонд → Никита Молчанов</span><strong>84</strong></div><div class="pair"><span>Роман Антропов → Никита Молчанов</span><strong>77</strong></div><div class="pair"><span>Никита Молчанов → Гриша Чуменко</span><strong>74</strong></div><div class="pair"><span>Смбат Гарибян → Никита Молчанов</span><strong>64</strong></div><div class="pair"><span>Гриша Чуменко → Никита Молчанов</span><strong>61</strong></div><div class="pair"><span>Владимир Царев → Гриша Чуменко</span><strong>58</strong></div><div class="pair"><span>Ярослейв → Никита Молчанов</span><strong>56</strong></div><div class="pair"><span>Смбат Гарибян → Гриша Чуменко</span><strong>54</strong></div><div class="pair"><span>Вахид → Никита Молчанов</span><strong>53</strong></div><div class="pair"><span>Владимир Царев → Ярослейв</span><strong>50</strong></div><div class="pair"><span>Никита Молчанов → Владимир Царев</span><strong>50</strong></div></div>
+</div></section>
+
+<section id="reactions"><h2>Реакции</h2><div class="grid3">
+<div class="panel"><h3>Кто получает реакции</h3><div class="barrow"><div class="barlabel"><span>Марик</span><b>13 958</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Никита Молчанов</span><b>10 615</b></div><div class="track"><i style="width:76.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Ярослейв</span><b>9 489</b></div><div class="track"><i style="width:68.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Владимир Царев</span><b>9 393</b></div><div class="track"><i style="width:67.3%"></i></div></div><div class="barrow"><div class="barlabel"><span>Илья Ланин</span><b>7 522</b></div><div class="track"><i style="width:53.9%"></i></div></div><div class="barrow"><div class="barlabel"><span>Гриша Чуменко</span><b>7 315</b></div><div class="track"><i style="width:52.4%"></i></div></div><div class="barrow"><div class="barlabel"><span>Смбат Гарибян</span><b>6 396</b></div><div class="track"><i style="width:45.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>Роман Антропов</span><b>6 265</b></div><div class="track"><i style="width:44.9%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даймонд</span><b>5 548</b></div><div class="track"><i style="width:39.7%"></i></div></div><div class="barrow"><div class="barlabel"><span>Вахид</span><b>5 507</b></div><div class="track"><i style="width:39.5%"></i></div></div><div class="barrow"><div class="barlabel"><span>Егор Гришин</span><b>4 622</b></div><div class="track"><i style="width:33.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>Александр Шишкин</span><b>4 237</b></div><div class="track"><i style="width:30.4%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даниил</span><b>1 362</b></div><div class="track"><i style="width:9.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>Чума</span><b>1 309</b></div><div class="track"><i style="width:9.4%"></i></div></div></div>
+<div class="panel"><h3>Популярные реакции</h3><div class="barrow"><div class="barlabel"><span>❤</span><b>88 253</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>😁</span><b>1 280</b></div><div class="track"><i style="width:1.5%"></i></div></div><div class="barrow"><div class="barlabel"><span>custom</span><b>654</b></div><div class="track"><i style="width:0.7%"></i></div></div><div class="barrow"><div class="barlabel"><span>🔥</span><b>613</b></div><div class="track"><i style="width:0.7%"></i></div></div><div class="barrow"><div class="barlabel"><span>🕊</span><b>381</b></div><div class="track"><i style="width:0.4%"></i></div></div><div class="barrow"><div class="barlabel"><span>🤝</span><b>219</b></div><div class="track"><i style="width:0.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>👍</span><b>209</b></div><div class="track"><i style="width:0.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>🫡</span><b>168</b></div><div class="track"><i style="width:0.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>🤣</span><b>167</b></div><div class="track"><i style="width:0.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>😢</span><b>155</b></div><div class="track"><i style="width:0.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>❤‍🔥</span><b>119</b></div><div class="track"><i style="width:0.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>💔</span><b>113</b></div><div class="track"><i style="width:0.1%"></i></div></div></div>
+<div class="panel"><h3>Что видно по реакциям</h3>
+<div class="callout"><b>Марик</b> получает больше всего реакций — 13 958.</div>
+<div class="callout"><b>❤</b> — доминирующая реакция: 88 253.</div>
+<div class="callout">В данных есть недавние реакции на отдельных сообщениях; поэтому отправленные реакции нельзя корректно использовать как полный рейтинг участников.</div>
+</div></div></section>
+
+<section id="activity"><h2>Активность</h2><div class="grid3">
+<div class="panel"><h3>Активные дни</h3><div class="barrow"><div class="barlabel"><span>Вахид</span><b>806</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даймонд</span><b>805</b></div><div class="track"><i style="width:99.9%"></i></div></div><div class="barrow"><div class="barlabel"><span>Марик</span><b>766</b></div><div class="track"><i style="width:95.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Ярослейв</span><b>711</b></div><div class="track"><i style="width:88.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>Владимир Царев</span><b>702</b></div><div class="track"><i style="width:87.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>Илья Ланин</span><b>701</b></div><div class="track"><i style="width:87.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Гриша Чуменко</span><b>682</b></div><div class="track"><i style="width:84.6%"></i></div></div><div class="barrow"><div class="barlabel"><span>Роман Антропов</span><b>633</b></div><div class="track"><i style="width:78.5%"></i></div></div><div class="barrow"><div class="barlabel"><span>Смбат Гарибян</span><b>623</b></div><div class="track"><i style="width:77.3%"></i></div></div><div class="barrow"><div class="barlabel"><span>Александр Шишкин</span><b>603</b></div><div class="track"><i style="width:74.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>Егор Гришин</span><b>484</b></div><div class="track"><i style="width:60.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Никита Молчанов</span><b>355</b></div><div class="track"><i style="width:44.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Чума</span><b>278</b></div><div class="track"><i style="width:34.5%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даниил</span><b>213</b></div><div class="track"><i style="width:26.4%"></i></div></div></div>
+<div class="panel"><h3>Средняя длина сообщения</h3><div class="barrow"><div class="barlabel"><span>Чума</span><b>37.8</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Егор Гришин</span><b>34.5</b></div><div class="track"><i style="width:91.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даймонд</span><b>34.2</b></div><div class="track"><i style="width:90.4%"></i></div></div><div class="barrow"><div class="barlabel"><span>Александр Шишкин</span><b>30.9</b></div><div class="track"><i style="width:81.7%"></i></div></div><div class="barrow"><div class="barlabel"><span>Илья Ланин</span><b>29.6</b></div><div class="track"><i style="width:78.3%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даниил</span><b>29.0</b></div><div class="track"><i style="width:76.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>Гриша Чуменко</span><b>27.6</b></div><div class="track"><i style="width:73.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>Владимир Царев</span><b>24.5</b></div><div class="track"><i style="width:64.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>Никита Молчанов</span><b>23.4</b></div><div class="track"><i style="width:61.7%"></i></div></div><div class="barrow"><div class="barlabel"><span>Ярослейв</span><b>23.0</b></div><div class="track"><i style="width:60.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>Марик</span><b>21.9</b></div><div class="track"><i style="width:57.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>Роман Антропов</span><b>19.2</b></div><div class="track"><i style="width:50.9%"></i></div></div><div class="barrow"><div class="barlabel"><span>Смбат Гарибян</span><b>18.6</b></div><div class="track"><i style="width:49.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>Вахид</span><b>18.4</b></div><div class="track"><i style="width:48.7%"></i></div></div></div>
+<div class="panel"><h3>Охват собеседников</h3><div class="barrow"><div class="barlabel"><span>Никита Молчанов</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Вахид</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даймонд</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Владимир Царев</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Марик</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Смбат Гарибян</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Ярослейв</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Гриша Чуменко</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Роман Антропов</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Илья Ланин</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Александр Шишкин</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Егор Гришин</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Чума</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>Даниил</span><b>13</b></div><div class="track"><i style="width:100.0%"></i></div></div></div>
+</div>
+<div class="panel"><h3>Ответность общения</h3>
+<table><tr><th>Участник</th><th>Ответил</th><th>Получил ответов</th><th>Баланс</th></tr>
+<tr><td>Никита Молчанов</td><td>7,380</td><td>8,042</td><td>-662</td></tr><tr><td>Вахид</td><td>4,027</td><td>6,035</td><td>-2,008</td></tr><tr><td>Даймонд</td><td>6,547</td><td>5,806</td><td>+741</td></tr><tr><td>Владимир Царев</td><td>5,444</td><td>5,258</td><td>+186</td></tr><tr><td>Марик</td><td>4,114</td><td>3,844</td><td>+270</td></tr><tr><td>Смбат Гарибян</td><td>2,958</td><td>3,257</td><td>-299</td></tr><tr><td>Ярослейв</td><td>4,187</td><td>3,236</td><td>+951</td></tr><tr><td>Гриша Чуменко</td><td>4,884</td><td>5,566</td><td>-682</td></tr><tr><td>Роман Антропов</td><td>3,307</td><td>3,282</td><td>+25</td></tr><tr><td>Илья Ланин</td><td>4,030</td><td>2,772</td><td>+1,258</td></tr><tr><td>Александр Шишкин</td><td>1,600</td><td>1,734</td><td>-134</td></tr><tr><td>Егор Гришин</td><td>2,006</td><td>1,813</td><td>+193</td></tr><tr><td>Чума</td><td>741</td><td>612</td><td>+129</td></tr><tr><td>Даниил</td><td>380</td><td>348</td><td>+32</td></tr></table>
+</div></section>
+
+<section id="media"><h2>Контент</h2><div class="grid3">
+<div class="panel"><h3>Типы сообщений</h3><div class="barrow"><div class="barlabel"><span>text</span><b>256 707</b></div><div class="track"><i style="width:100.0%"></i></div></div><div class="barrow"><div class="barlabel"><span>sticker</span><b>34 498</b></div><div class="track"><i style="width:13.4%"></i></div></div><div class="barrow"><div class="barlabel"><span>photo</span><b>11 094</b></div><div class="track"><i style="width:4.3%"></i></div></div><div class="barrow"><div class="barlabel"><span>voice_message</span><b>2 760</b></div><div class="track"><i style="width:1.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>video_message</span><b>1 977</b></div><div class="track"><i style="width:0.8%"></i></div></div><div class="barrow"><div class="barlabel"><span>video_file</span><b>1 242</b></div><div class="track"><i style="width:0.5%"></i></div></div><div class="barrow"><div class="barlabel"><span>animation</span><b>509</b></div><div class="track"><i style="width:0.2%"></i></div></div><div class="barrow"><div class="barlabel"><span>file</span><b>147</b></div><div class="track"><i style="width:0.1%"></i></div></div><div class="barrow"><div class="barlabel"><span>audio_file</span><b>53</b></div><div class="track"><i style="width:0.0%"></i></div></div></div>
+<div class="panel"><h3>Что это говорит о чате</h3>
+<div class="callout">Основной формат — текст: <b>256,707</b> сообщений.</div>
+<div class="callout">Стикеров — <b>34,498</b>: почти отдельный язык общения группы.</div>
+<div class="callout">Фото, голосовые и видео вместе дают заметный мультимедийный слой.</div>
+</div>
+<div class="panel"><h3>Интенсивность</h3>
+<p>В среднем <b>22,070</b> сообщений приходится на одного участника.</p>
+<p>На каждый прямой ответ приходится примерно <b>6.0</b> сообщения.</p>
+<p>Доля сообщений, являющихся ответами, — <b>16.7%</b>.</p>
+</div></div></section>
+
+<section id="highlights"><h2>Главные выводы</h2>
+<div class="panel">
+<div class="callout"><b>1. Группа не имеет одного универсального лидера.</b> Центр распределён между несколькими участниками: разные люди доминируют в объёме сообщений, реакциях, ответах и конфликтной динамике.</div>
+<div class="callout"><b>2. Никита — главный коммуникационный узел.</b> Он одновременно самый активный и одна из главных целей коллективного стёба.</div>
+<div class="callout"><b>3. Александр Шишкин не изолирован.</b> Он имеет прямые связи со всеми 13 остальными участниками и заметные конфликтные/подколочные обмены с Егором, Даймондом, Вахидом, Никитой и Владимиром.</div>
+<div class="callout"><b>4. Марик — лидер по полученным реакциям.</b> Это отдельный показатель влияния на атмосферу, который не совпадает с количеством сообщений.</div>
+<div class="callout"><b>5. Конфликт в группе встроен в обычную коммуникацию.</b> Высокие показатели спора и агрессивной лексики чаще встречаются у самых связанных пар, поэтому сами по себе не означают плохие отношения.</div>
+<div class="callout"><b>6. Самые интересные участники для сравнения — не обязательно самые активные.</b> Александр и Егор хорошо показывают, почему одного счётчика сообщений недостаточно: при меньшем объёме у них широкая сеть взаимодействий.</div>
+</div></section>
+
+<footer>Анализ построен по 308 987 сообщениям 14 участников из Telegram-архива. Служебные записи и Mementioner исключены. Прозвища не используются как отдельные участники.</footer>
+</div>
+</body></html>
